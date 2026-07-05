@@ -1,0 +1,101 @@
+utt_id,tokens,lang_tags
+vise_0001,em vua push code len branch develop roi tao pull request,VIE VIE ENG ENG VIE ENG ENG VIE VIE ENG ENG
+vise_0002,component nay bi re-render nhieu lan khi state thay doi,ENG VIE VIE ENG VIE VIE VIE ENG VIE VIE
+vise_0003,api login dang tra ve status code nam tram,ENG ENG VIE VIE VIE ENG ENG VIE VIE
+vise_0004,query nay thieu index nen chay rat cham tren production,ENG VIE VIE ENG VIE VIE VIE VIE VIE ENG
+vise_0005,minh can viet them unit test cho ham validate email,VIE VIE VIE VIE ENG ENG VIE VIE ENG ENG
+vise_0006,pipeline bi fail o buoc build docker image,ENG VIE ENG VIE VIE ENG ENG ENG
+vise_0007,nut submit khong disable khi form dang loading,VIE ENG VIE ENG VIE ENG VIE ENG
+vise_0008,middleware authentication nen tach ra thanh mot module rieng,ENG ENG VIE VIE VIE VIE VIE ENG VIE
+vise_0009,bang users can them unique constraint cho truong phone,VIE ENG VIE VIE ENG ENG VIE VIE VIE
+vise_0010,test case nay flaky vi phu thuoc vao thoi gian hien tai,ENG VIE VIE ENG VIE VIE VIE VIE VIE VIE VIE VIE
+vise_0011,server staging dang het disk nen khong deploy duoc,ENG ENG VIE VIE ENG VIE VIE ENG VIE
+vise_0012,sprint nay minh lam trang dashboard bang react query,ENG VIE VIE VIE VIE ENG VIE ENG ENG
+vise_0013,token het han nhung refresh token khong duoc goi lai,ENG VIE VIE VIE ENG ENG VIE VIE VIE VIE
+vise_0014,migration nay can rollback script truoc khi merge,ENG VIE VIE ENG ENG VIE VIE ENG
+vise_0015,mock service chua cover truong hop timeout,ENG ENG VIE VIE VIE VIE ENG
+vise_0016,config kubernetes dang thieu environment variable cho database url,ENG ENG VIE VIE ENG ENG VIE ENG ENG
+vise_0017,css o mobile bi vo layout khi sidebar mo,ENG VIE ENG VIE VIE ENG VIE ENG VIE
+vise_0018,endpoint search can phan trang va cache ket qua,ENG ENG VIE VIE VIE VIE ENG VIE VIE
+vise_0019,transaction bi deadlock khi hai request update cung mot record,ENG VIE ENG VIE VIE ENG ENG VIE VIE ENG
+vise_0020,integration test nen chay voi database container rieng,ENG ENG VIE VIE VIE ENG ENG VIE
+vise_0021,pull request nay doi file ci nen can review ky,ENG ENG VIE VIE VIE ENG VIE VIE ENG VIE
+vise_0022,hook use effect bi goi lap vi dependency array sai,ENG ENG ENG VIE VIE VIE VIE ENG ENG VIE
+vise_0023,service payment thinh thoang tra ve null response,ENG ENG VIE VIE VIE VIE ENG ENG
+vise_0024,schema moi phai ho tro soft delete cho order,ENG VIE VIE VIE VIE ENG ENG VIE ENG
+vise_0025,coverage giam vi nhanh error chua co assertion,ENG VIE VIE VIE ENG VIE VIE ENG
+vise_0026,log production co nhieu warning ve memory leak,ENG ENG VIE VIE ENG VIE ENG ENG
+vise_0027,prop name nay chua ro nghia nen doi thanh is disabled,ENG ENG VIE VIE VIE VIE VIE VIE VIE ENG ENG
+vise_0028,chung ta nen dung message queue cho tac vu gui email,VIE VIE VIE VIE ENG ENG VIE VIE VIE VIE ENG
+vise_0029,foreign key bi loi vi du lieu seed khong dung thu tu,ENG ENG VIE VIE VIE VIE VIE ENG VIE VIE VIE VIE
+vise_0030,e two e test can login bang tai khoan demo,ENG ENG ENG ENG VIE ENG VIE VIE VIE VIE
+vise_0031,rollback ban release neu health check tiep tuc fail,ENG VIE ENG VIE ENG ENG VIE VIE ENG
+vise_0032,modal khong close khi nguoi dung bam escape,ENG VIE ENG VIE VIE VIE VIE ENG
+vise_0033,controller nay dang chua qua nhieu business logic,ENG VIE VIE VIE VIE VIE ENG ENG
+vise_0034,index composite nen dat theo thu tu tenant id roi created at,ENG ENG VIE VIE VIE VIE VIE ENG ENG VIE ENG ENG
+vise_0035,snapshot test fail vi text button vua thay doi,ENG ENG ENG VIE ENG ENG VIE VIE VIE
+vise_0036,pod bi crash loop back off sau khi update secret,ENG VIE ENG ENG ENG ENG VIE VIE ENG ENG
+vise_0037,man hinh profile can lazy load phan activity history,VIE VIE ENG VIE ENG ENG VIE ENG ENG
+vise_0038,rate limiter chan nham request tu internal service,ENG ENG VIE VIE ENG VIE ENG ENG
+vise_0039,replica lag lam du lieu hien thi bi cu,ENG ENG VIE VIE VIE VIE VIE VIE VIE
+vise_0040,docker compose nen tach rieng service redis va postgres,ENG ENG VIE VIE VIE ENG ENG VIE ENG
+vise_0041,button primary can them aria label cho screen reader,ENG ENG VIE VIE ENG ENG VIE ENG ENG
+vise_0042,api gateway se route request sang service inventory,ENG ENG VIE ENG ENG VIE ENG ENG
+vise_0043,slow query log cho thay join dang quet toan bo bang,ENG ENG ENG VIE VIE ENG VIE VIE VIE VIE VIE
+vise_0044,load test can mo phong mot nghin concurrent users,ENG ENG VIE VIE VIE VIE VIE ENG ENG
+vise_0045,cpu usage tang cao sau khi bat autoscaling,ENG ENG VIE VIE VIE VIE VIE ENG
+vise_0046,bundle size lon vi import ca thu vien lodash,ENG ENG VIE VIE ENG VIE VIE VIE ENG
+vise_0047,webhook payment gui duplicate event trong cung mot phut,ENG ENG VIE ENG ENG VIE VIE VIE VIE
+vise_0048,column email nen dung kieu citext de search khong phan biet hoa thuong,ENG ENG VIE VIE VIE ENG VIE ENG VIE VIE VIE VIE VIE
+vise_0049,fixture nay tao du lieu qua nhieu lam test suite cham,ENG VIE VIE VIE VIE VIE VIE VIE ENG ENG VIE
+vise_0050,github actions can cache dependency truoc buoc install,ENG ENG VIE ENG ENG VIE VIE ENG
+vise_0051,trang settings can debounce khi user nhap o search,VIE ENG VIE ENG VIE ENG VIE VIE ENG
+vise_0052,grpc client bi deadline exceeded khi goi service report,ENG ENG VIE ENG ENG VIE VIE ENG ENG
+vise_0053,partition table theo thang de giam thoi gian archive,ENG ENG VIE VIE VIE VIE VIE VIE ENG
+vise_0054,assertion message chua ro nen kho debug khi test fail,ENG ENG VIE VIE VIE VIE VIE VIE ENG ENG
+vise_0055,nginx tra ve bad gateway vi upstream service down,ENG VIE VIE ENG ENG VIE ENG ENG ENG
+vise_0056,custom hook nay nen return object thay vi array,ENG ENG VIE VIE ENG ENG VIE VIE ENG
+vise_0057,event handler nen idempotent de retry khong tao du lieu trung,ENG ENG VIE ENG VIE ENG VIE VIE VIE VIE VIE
+vise_0058,connection pool bi day khi batch job chay ban dem,ENG ENG VIE VIE VIE ENG ENG VIE VIE VIE
+vise_0059,contract test can verify response schema cua api,ENG ENG VIE ENG ENG ENG VIE ENG
+vise_0060,terraform plan co thay doi ngoai du kien o security group,ENG ENG VIE VIE VIE VIE VIE VIE VIE ENG ENG
+vise_0061,toast notification bi che boi header sticky,ENG ENG VIE VIE VIE ENG ENG
+vise_0062,dto request can validate truoc khi goi repository,ENG ENG VIE ENG VIE VIE VIE ENG
+vise_0063,read replica chi nen dung cho query bao cao,ENG ENG VIE VIE VIE VIE ENG VIE VIE
+vise_0064,mock clock giup test logic het han token on dinh hon,ENG ENG VIE ENG ENG VIE VIE ENG VIE VIE VIE
+vise_0065,container restart lien tuc vi health probe cau hinh sai,ENG VIE VIE VIE VIE ENG ENG VIE VIE VIE
+vise_0066,form wizard can luu draft vao local storage,ENG ENG VIE VIE ENG VIE ENG ENG
+vise_0067,serializer bo sot field discount trong response,ENG VIE VIE ENG ENG VIE ENG
+vise_0068,migration them column not null can default value,ENG VIE ENG VIE ENG VIE VIE VIE
+vise_0069,smoke test nen chay ngay sau khi deploy staging,ENG ENG VIE VIE VIE VIE VIE ENG ENG
+vise_0070,blue green deployment giup giam downtime khi release,ENG ENG ENG VIE VIE ENG VIE ENG
+vise_0071,hydration error xuat hien khi server render khac client,ENG ENG VIE VIE VIE ENG ENG VIE ENG
+vise_0072,job scheduler se gui reminder moi ngay luc tam gio,ENG ENG VIE VIE ENG VIE VIE VIE VIE VIE
+vise_0073,backup restore bi loi vi version postgres khong khop,ENG ENG VIE VIE VIE ENG ENG VIE VIE
+vise_0074,test data builder giup giam duplication trong unit test,ENG VIE ENG VIE VIE ENG VIE ENG ENG
+vise_0075,alert manager gui qua nhieu notification cho cung mot incident,ENG ENG VIE VIE VIE ENG VIE VIE VIE VIE
+vise_0076,memoization o list item giup giam render khong can thiet,ENG VIE ENG ENG VIE VIE ENG VIE VIE VIE
+vise_0077,circuit breaker mo khi downstream service timeout lien tuc,ENG ENG VIE VIE ENG ENG ENG VIE VIE
+vise_0078,materialized view se tang toc dashboard analytics,ENG ENG VIE VIE VIE ENG ENG
+vise_0079,parallel test bi conflict vi dung chung temp folder,ENG ENG VIE ENG VIE VIE VIE ENG ENG
+vise_0080,helm chart thieu resource limit cho worker pod,ENG ENG VIE ENG ENG VIE ENG ENG
+vise_0081,dark mode can dong bo theme giua browser va app state,ENG ENG VIE VIE VIE ENG VIE ENG VIE ENG ENG
+vise_0082,repository layer khong nen phu thuoc truc tiep vao express request,ENG ENG VIE VIE VIE VIE VIE VIE VIE ENG ENG
+vise_0083,vacuum chua chay nen table bloat tang rat nhanh,ENG VIE VIE VIE ENG ENG VIE VIE VIE
+vise_0084,mutation test giup kiem tra chat luong assertion,ENG ENG VIE VIE VIE VIE VIE ENG
+vise_0085,ssl certificate het han lam client khong goi duoc api,ENG ENG VIE VIE VIE ENG VIE VIE VIE ENG
+vise_0086,image lazy loading khien layout shift tren trang product,ENG ENG ENG VIE ENG VIE VIE VIE ENG
+vise_0087,feature flag cho phep bat dan chuc nang recommendation,ENG ENG VIE VIE VIE VIE VIE VIE ENG
+vise_0088,enum status nen co migration cho gia tri cancelled,ENG ENG VIE VIE ENG VIE VIE VIE ENG
+vise_0089,playwright trace giup xem lai buoc click bi fail,ENG ENG VIE VIE VIE VIE ENG VIE ENG
+vise_0090,artifact build can gan version tag theo git commit,ENG ENG VIE VIE ENG ENG VIE ENG ENG
+vise_0091,accessibility audit se kiem tra contrast va keyboard navigation,ENG ENG VIE VIE VIE ENG VIE ENG ENG
+vise_0092,oauth callback redirect sai domain tren moi truong staging,ENG ENG ENG VIE ENG VIE VIE VIE ENG
+vise_0093,sharding theo tenant id co the giam tai database chinh,ENG VIE ENG ENG VIE VIE VIE VIE ENG VIE
+vise_0094,snapshot nen update sau khi designer doi copy,ENG VIE ENG VIE VIE ENG VIE ENG
+vise_0095,message broker bi nghen vi consumer xu ly qua cham,ENG ENG VIE VIE VIE ENG VIE VIE VIE VIE
+vise_0096,service worker cache lam nguoi dung thay phien ban cu,ENG ENG ENG VIE VIE VIE VIE VIE VIE VIE
+vise_0097,graphql resolver can batch request de tranh n plus one query,ENG ENG VIE ENG ENG VIE VIE ENG ENG ENG ENG
+vise_0098,unique index khong hoat dong vi du lieu null duoc phep lap,ENG ENG VIE VIE VIE VIE VIE VIE ENG VIE VIE VIE
+vise_0099,regression test se cover cac bug da tung xay ra,VIE ENG VIE VIE VIE VIE VIE VIE VIE VIE
+vise_0100,dockerfile nen dung multi stage build de giam image size,VIE VIE VIE ENG ENG ENG VIE VIE ENG ENG

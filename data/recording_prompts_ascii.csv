@@ -1,0 +1,101 @@
+utt_id,prompt_ascii
+vise_0001,em vua push code len branch develop roi tao pull request
+vise_0002,component nay bi re-render nhieu lan khi state thay doi
+vise_0003,api login dang tra ve status code nam tram
+vise_0004,query nay thieu index nen chay rat cham tren production
+vise_0005,minh can viet them unit test cho ham validate email
+vise_0006,pipeline bi fail o buoc build docker image
+vise_0007,nut submit khong disable khi form dang loading
+vise_0008,middleware authentication nen tach ra thanh mot module rieng
+vise_0009,bang users can them unique constraint cho truong phone
+vise_0010,test case nay flaky vi phu thuoc vao thoi gian hien tai
+vise_0011,server staging dang het disk nen khong deploy duoc
+vise_0012,sprint nay minh lam trang dashboard bang react query
+vise_0013,token het han nhung refresh token khong duoc goi lai
+vise_0014,migration nay can rollback script truoc khi merge
+vise_0015,mock service chua cover truong hop timeout
+vise_0016,config kubernetes dang thieu environment variable cho database url
+vise_0017,css o mobile bi vo layout khi sidebar mo
+vise_0018,endpoint search can phan trang va cache ket qua
+vise_0019,transaction bi deadlock khi hai request update cung mot record
+vise_0020,integration test nen chay voi database container rieng
+vise_0021,pull request nay doi file ci nen can review ky
+vise_0022,hook use effect bi goi lap vi dependency array sai
+vise_0023,service payment thinh thoang tra ve null response
+vise_0024,schema moi phai ho tro soft delete cho order
+vise_0025,coverage giam vi nhanh error chua co assertion
+vise_0026,log production co nhieu warning ve memory leak
+vise_0027,prop name nay chua ro nghia nen doi thanh is disabled
+vise_0028,chung ta nen dung message queue cho tac vu gui email
+vise_0029,foreign key bi loi vi du lieu seed khong dung thu tu
+vise_0030,e two e test can login bang tai khoan demo
+vise_0031,rollback ban release neu health check tiep tuc fail
+vise_0032,modal khong close khi nguoi dung bam escape
+vise_0033,controller nay dang chua qua nhieu business logic
+vise_0034,index composite nen dat theo thu tu tenant id roi created at
+vise_0035,snapshot test fail vi text button vua thay doi
+vise_0036,pod bi crash loop back off sau khi update secret
+vise_0037,man hinh profile can lazy load phan activity history
+vise_0038,rate limiter chan nham request tu internal service
+vise_0039,replica lag lam du lieu hien thi bi cu
+vise_0040,docker compose nen tach rieng service redis va postgres
+vise_0041,button primary can them aria label cho screen reader
+vise_0042,api gateway se route request sang service inventory
+vise_0043,slow query log cho thay join dang quet toan bo bang
+vise_0044,load test can mo phong mot nghin concurrent users
+vise_0045,cpu usage tang cao sau khi bat autoscaling
+vise_0046,bundle size lon vi import ca thu vien lodash
+vise_0047,webhook payment gui duplicate event trong cung mot phut
+vise_0048,column email nen dung kieu citext de search khong phan biet hoa thuong
+vise_0049,fixture nay tao du lieu qua nhieu lam test suite cham
+vise_0050,github actions can cache dependency truoc buoc install
+vise_0051,trang settings can debounce khi user nhap o search
+vise_0052,grpc client bi deadline exceeded khi goi service report
+vise_0053,partition table theo thang de giam thoi gian archive
+vise_0054,assertion message chua ro nen kho debug khi test fail
+vise_0055,nginx tra ve bad gateway vi upstream service down
+vise_0056,custom hook nay nen return object thay vi array
+vise_0057,event handler nen idempotent de retry khong tao du lieu trung
+vise_0058,connection pool bi day khi batch job chay ban dem
+vise_0059,contract test can verify response schema cua api
+vise_0060,terraform plan co thay doi ngoai du kien o security group
+vise_0061,toast notification bi che boi header sticky
+vise_0062,dto request can validate truoc khi goi repository
+vise_0063,read replica chi nen dung cho query bao cao
+vise_0064,mock clock giup test logic het han token on dinh hon
+vise_0065,container restart lien tuc vi health probe cau hinh sai
+vise_0066,form wizard can luu draft vao local storage
+vise_0067,serializer bo sot field discount trong response
+vise_0068,migration them column not null can default value
+vise_0069,smoke test nen chay ngay sau khi deploy staging
+vise_0070,blue green deployment giup giam downtime khi release
+vise_0071,hydration error xuat hien khi server render khac client
+vise_0072,job scheduler se gui reminder moi ngay luc tam gio
+vise_0073,backup restore bi loi vi version postgres khong khop
+vise_0074,test data builder giup giam duplication trong unit test
+vise_0075,alert manager gui qua nhieu notification cho cung mot incident
+vise_0076,memoization o list item giup giam render khong can thiet
+vise_0077,circuit breaker mo khi downstream service timeout lien tuc
+vise_0078,materialized view se tang toc dashboard analytics
+vise_0079,parallel test bi conflict vi dung chung temp folder
+vise_0080,helm chart thieu resource limit cho worker pod
+vise_0081,dark mode can dong bo theme giua browser va app state
+vise_0082,repository layer khong nen phu thuoc truc tiep vao express request
+vise_0083,vacuum chua chay nen table bloat tang rat nhanh
+vise_0084,mutation test giup kiem tra chat luong assertion
+vise_0085,ssl certificate het han lam client khong goi duoc api
+vise_0086,image lazy loading khien layout shift tren trang product
+vise_0087,feature flag cho phep bat dan chuc nang recommendation
+vise_0088,enum status nen co migration cho gia tri cancelled
+vise_0089,playwright trace giup xem lai buoc click bi fail
+vise_0090,artifact build can gan version tag theo git commit
+vise_0091,accessibility audit se kiem tra contrast va keyboard navigation
+vise_0092,oauth callback redirect sai domain tren moi truong staging
+vise_0093,sharding theo tenant id co the giam tai database chinh
+vise_0094,snapshot nen update sau khi designer doi copy
+vise_0095,message broker bi nghen vi consumer xu ly qua cham
+vise_0096,service worker cache lam nguoi dung thay phien ban cu
+vise_0097,graphql resolver can batch request de tranh n plus one query
+vise_0098,unique index khong hoat dong vi du lieu null duoc phep lap
+vise_0099,regression test se cover cac bug da tung xay ra
+vise_0100,dockerfile nen dung multi stage build de giam image size

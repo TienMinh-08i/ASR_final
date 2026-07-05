@@ -1,0 +1,16 @@
+utt_id,split,domain,wer,errors,words,ref_term_count,hyp_term_count,matched_term_count,missed_term_count,inserted_term_count,missed_terms,inserted_terms,reference,prediction
+vise_0086,test,frontend,0.1111,1,9,3,2,2,1,0,layout shift,,image lazy loading khien layout shift tren trang product,"Image Lazy, loading khiến layout sếp trên trang product"
+vise_0087,test,backend,0.2222,2,9,1,0,0,1,0,feature flag,,feature flag cho phep bat dan chuc nang recommendation,Feature Flux cho phép bật dần thức năng recommendation.
+vise_0088,test,database,0.3333,3,9,2,1,1,1,0,enum status,,enum status nen co migration cho gia tri cancelled,Inum status nên có migration cho giải trị cancel.
+vise_0089,test,testing,0.4444,4,9,1,0,0,1,0,playwright trace,,playwright trace giup xem lai buoc click bi fail,"Play Drive, Chess, dúp xem lại bước click bị fail."
+vise_0090,test,devops,0.4444,4,9,3,0,0,3,0,artifact build; git commit; version tag,,artifact build can gan version tag theo git commit,Artifact Bill can gần gắn version thác theo gích commit
+vise_0091,test,frontend,0.1111,1,9,2,2,2,0,0,,,accessibility audit se kiem tra contrast va keyboard navigation,"Accessibility, Audit sẽ kiểm tra construct và keyboard navigation."
+vise_0092,test,backend,0.5556,5,9,2,0,0,2,0,oauth callback; staging,,oauth callback redirect sai domain tren moi truong staging,Otcobac direct site domain trên môi trường. Static.
+vise_0093,test,database,0.4000,4,10,2,0,0,2,0,tenant id; sharding,,sharding theo tenant id co the giam tai database chinh,Chắc đình theo tìm nhần ID có thể giảm tại Database chính.
+vise_0094,test,testing,0.0000,0,8,0,0,0,0,0,,,snapshot nen update sau khi designer doi copy,Snapshot nên update sau khi designer. Đợi copy.
+vise_0095,test,devops,0.3000,3,10,2,2,2,0,0,,,message broker bi nghen vi consumer xu ly qua cham,Message broker bị nhẹn vì consumer dưới lý quá trợ.
+vise_0096,test,frontend,0.3000,3,10,2,1,1,1,0,cache,,service worker cache lam nguoi dung thay phien ban cu,Service Worker Cast là người dùng thay viên bản cũ.
+vise_0097,test,backend,0.4545,5,11,2,0,0,2,0,n plus one query; graphql resolver,,graphql resolver can batch request de tranh n plus one query,Crap PL Resolver Cần bus request để tránh N plus 1 QE
+vise_0098,test,database,0.4167,5,12,2,0,0,2,0,unique index; index,,unique index khong hoat dong vi du lieu null duoc phep lap,Chủ Nick Indic không hoạt động vì dữ liệu nôn được phép lặng.
+vise_0099,test,testing,0.3000,3,10,1,0,0,1,0,regression test,,regression test se cover cac bug da tung xay ra,RequestionTest sẽ cover các bức đã từng xảy ra.
+vise_0100,test,devops,0.4000,4,10,3,1,1,2,0,multi stage build; dockerfile,,dockerfile nen dung multi stage build de giam image size,Dockerfine nên dùng Mantis.txtView để giảm image size.

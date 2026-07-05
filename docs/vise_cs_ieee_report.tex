@@ -1,0 +1,320 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{array}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\begin{document}
+
+\title{ViSE-CS: A Vietnamese Software Engineering Code-Switching Speech Dataset and Benchmark}
+
+\author{
+\IEEEauthorblockN{Student Name}
+\IEEEauthorblockA{\textit{Department of Information Technology} \\
+\textit{University / Institution Name}\\
+City, Vietnam \\
+student.email@example.com}
+}
+
+\maketitle
+
+\begin{abstract}
+Code-switching speech is common in Vietnamese software engineering environments, where developers naturally mix Vietnamese with English technical terms such as ``pull request'', ``unit test'', ``Dockerfile'', ``OAuth callback'', and ``GraphQL resolver''. General-purpose automatic speech recognition (ASR) systems often struggle with this setting because many important tokens are domain-specific, abbreviated, or pronounced with local Vietnamese-English variation. This paper presents ViSE-CS Mini, a small Vietnamese Software Engineering Code-Switching speech dataset and benchmark. The dataset contains 100 utterances covering five software engineering domains: frontend, backend, database, DevOps, and testing. Each utterance is provided with metadata, transcript, train/dev/test split, token-level language tags, and a technical term lexicon. A recording script and benchmark pipeline are also implemented. We evaluate Whisper tiny, base, and small on the test set. Whisper small obtains 32.64\% word error rate (WER), improving over Whisper base at 68.75\% WER. We additionally report a post-hoc glossary correction analysis that reduces WER to 9.72\% and term miss rate to 0.00\%, but we do not treat it as a blind test result because the rules were designed after inspecting test-set errors. The results suggest that domain-specific code-switching data and term-aware evaluation are necessary for practical ASR in Vietnamese software engineering contexts.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Vietnamese speech recognition, code-switching, software engineering, automatic speech recognition, benchmark, dataset
+\end{IEEEkeywords}
+
+\section{Introduction}
+Software engineering communication in Vietnam frequently involves code-switching between Vietnamese and English. In daily standups, debugging sessions, code reviews, and deployment discussions, developers often speak Vietnamese grammar while preserving English technical terms. For example, a developer may say ``em vua push code len branch develop roi tao pull request'', or ``graphql resolver can batch request de tranh n plus one query''. These utterances are natural in software teams but are challenging for automatic speech recognition (ASR).
+
+The difficulty comes from three main factors. First, software engineering contains a dense set of technical terms, tool names, command names, and abbreviations. Second, many terms are not ordinary English words, such as ``Dockerfile'', ``CI'', ``DTO'', ``OAuth'', and ``CrashLoopBackOff''. Third, Vietnamese speakers may pronounce English technical terms with different local variations. As a result, ASR models trained for general Vietnamese or general multilingual speech may produce incorrect transcripts exactly at the words that matter most.
+
+This work builds a small but complete dataset and benchmark named ViSE-CS Mini. The goal is not to provide a large production-scale corpus, but to demonstrate the full research workflow for a Vietnamese software engineering code-switching ASR dataset: corpus design, recording, metadata annotation, language tagging, lexicon construction, baseline transcription, and evaluation.
+
+The contributions are as follows:
+\begin{itemize}
+\item A 100-utterance Vietnamese-English code-switching speech dataset for software engineering scenarios.
+\item Metadata and annotation files, including domain labels, scenario labels, speaker identifiers, train/dev/test split, token-level language tags, and a technical term lexicon.
+\item A practical recording script that displays one prompt at a time and saves utterance-level WAV files.
+\item A benchmark pipeline that supports local Whisper transcription and computes WER, domain-level WER, and a recall-oriented term miss rate.
+\item Baseline results showing that off-the-shelf Whisper models still make many errors on software engineering terms.
+\end{itemize}
+
+\section{Related Work}
+ASR has improved significantly with large-scale self-supervised and weakly supervised learning. wav2vec 2.0 demonstrated that speech representations can be learned from unlabeled audio and then fine-tuned for recognition tasks \cite{b1}. Conformer combined convolution and Transformer modules to improve sequence modeling for ASR \cite{b2}. Whisper showed strong multilingual and multitask speech recognition performance using large-scale weak supervision \cite{b3}. For Vietnamese ASR, PhoWhisper fine-tunes multilingual Whisper on a large Vietnamese speech corpus with diverse accents and reports strong results on Vietnamese ASR benchmarks \cite{b4}. PhoWhisper is therefore an important baseline for future versions of this work.
+
+Despite this progress, domain-specific code-switching remains difficult. Code-switching ASR requires the model to recognize language boundaries and technical vocabulary at the same time. In software engineering, the challenge is even more specific because many tokens are not only English, but also code-like identifiers, library names, cloud infrastructure terms, testing terms, and database terms. Therefore, ordinary WER alone may hide important errors. A transcript may look acceptable at the sentence level but fail on terms such as ``OAuth callback'', ``GraphQL resolver'', or ``multi stage build''. For this reason, ViSE-CS Mini includes a technical lexicon and evaluates both WER and a recall-oriented term miss rate.
+
+\section{Dataset Design}
+\subsection{Scope}
+ViSE-CS Mini contains 100 utterances. The utterances are designed to represent realistic software engineering speech in Vietnamese teams. Five domains are covered:
+\begin{itemize}
+\item Frontend: user interface, React hooks, accessibility, layout, caching, and rendering.
+\item Backend: APIs, middleware, authentication, service design, queues, GraphQL, and business logic.
+\item Database: schema design, migrations, indexing, transactions, replication, and sharding.
+\item DevOps: Docker, Kubernetes, CI/CD, deployment, monitoring, alerts, and incidents.
+\item Testing: unit tests, integration tests, E2E tests, smoke tests, regression tests, and Playwright traces.
+\end{itemize}
+
+\subsection{Data Format}
+Each utterance has an identifier and a fixed audio path. The main metadata file is \texttt{utterances.csv}. It contains the following fields:
+\begin{itemize}
+\item \texttt{utt\_id}: utterance identifier, e.g., \texttt{vise\_0001}.
+\item \texttt{audio\_path}: target WAV file path.
+\item \texttt{split}: train, dev, or test.
+\item \texttt{domain}: software engineering domain.
+\item \texttt{scenario}: communication scenario such as code review, debugging, incident, or deployment.
+\item \texttt{speaker\_id}: anonymized speaker identifier.
+\item \texttt{transcript}: reference transcript.
+\end{itemize}
+
+The dataset uses ASCII transcripts for recording stability on Windows terminals. This prevents display errors when Vietnamese diacritics are not rendered correctly by the console. The benchmark normalization also removes accents before scoring so that accent differences between the ASR output and the reference do not dominate the metric. This choice makes the pilot benchmark easier and should not be interpreted as full Vietnamese ASR evaluation; future versions should report both diacritic-sensitive and accent-normalized WER.
+
+\subsection{Split}
+The dataset is divided into train, development, and test subsets. The split is shown in Table~\ref{tab:split}.
+
+\begin{table}[htbp]
+\caption{Dataset Split}
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+\textbf{Split} & \textbf{Utterances} & \textbf{Percentage} \\
+\midrule
+Train & 70 & 70\% \\
+Dev & 15 & 15\% \\
+Test & 15 & 15\% \\
+\midrule
+Total & 100 & 100\% \\
+\bottomrule
+\end{tabular}
+\label{tab:split}
+\end{center}
+\end{table}
+
+\subsection{Recorded Audio}
+All 100 utterances were recorded as individual WAV files. The total duration is 10.30 minutes, with an average duration of 6.18 seconds per utterance. Table~\ref{tab:domains} summarizes the domain distribution.
+
+\begin{table}[htbp]
+\caption{Domain Distribution}
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+\textbf{Domain} & \textbf{Utterances} \\
+\midrule
+DevOps & 21 \\
+Frontend & 20 \\
+Backend & 20 \\
+Database & 20 \\
+Testing & 19 \\
+\midrule
+Total & 100 \\
+\bottomrule
+\end{tabular}
+\label{tab:domains}
+\end{center}
+\end{table}
+
+\section{Annotation}
+\subsection{Language Tags}
+Token-level tags are provided in \texttt{tokens.csv}. The current tag set includes:
+\begin{itemize}
+\item \texttt{VIE}: Vietnamese token.
+\item \texttt{ENG}: English or software engineering term.
+\item \texttt{CODE}: code-like term, framework name, command, identifier, or tool name.
+\end{itemize}
+
+For example, the utterance ``em vua push code len branch develop roi tao pull request'' mixes Vietnamese function words with English software engineering terms. Such utterances are representative of Vietnamese engineering speech.
+
+\subsection{Technical Lexicon}
+The file \texttt{lexicon.csv} contains software engineering terms and their categories. It includes terms such as ``pull request'', ``unit test'', ``middleware'', ``Docker Compose'', ``OAuth callback'', ``GraphQL resolver'', ``regression test'', and ``multi stage build''. This lexicon is used to compute a term miss rate, which focuses on whether domain-critical terms in the reference are recovered by the ASR output.
+
+\section{Recording and Benchmark Pipeline}
+\subsection{Recording Script}
+The script \texttt{record\_audio.py} displays one utterance at a time and records one WAV file per utterance. The user presses Enter to start and Enter again to stop recording. The script supports filtering by split or domain, resuming from a specific utterance, overwriting existing files, and recording only missing files.
+
+The following command records the whole dataset:
+\begin{verbatim}
+python scripts/record_audio.py --speaker-id spk01 --start vise_0001 --overwrite
+\end{verbatim}
+
+\subsection{Audio Checking}
+The script \texttt{check\_recordings.py} verifies that the expected WAV files exist and reports total duration, average duration, missing files, and suspicious short recordings. In the current dataset, all 100 files are present.
+
+\subsection{Benchmark Script}
+The benchmark pipeline is implemented in \texttt{run\_benchmark.py}. It can either evaluate an existing prediction CSV file or run local Whisper transcription before evaluation. The evaluation script computes WER and term miss rate. WER is defined as:
+
+\begin{equation}
+WER = \frac{S + D + I}{N},
+\end{equation}
+
+where $S$ is the number of substitutions, $D$ is the number of deletions, $I$ is the number of insertions, and $N$ is the number of reference words.
+
+Term miss rate is computed over lexicon terms that appear in the reference transcript:
+
+\begin{equation}
+TMR = \frac{M}{T},
+\end{equation}
+
+where $M$ is the number of missed technical terms and $T$ is the number of reference technical terms found by lexicon matching. In the test split, $T=28$. We also report exact-match term precision, recall, and F1 over the same lexicon. Term recall is equivalent to $1 - TMR$, so the result tables focus on precision, recall, and F1. These metrics are still limited because they rely on exact lexicon matching and do not capture near-equivalent paraphrases or non-lexicon technical insertions.
+
+\section{Experimental Setup}
+Four ASR models are evaluated as baselines:
+\begin{itemize}
+\item Whisper tiny.
+\item Whisper base.
+\item Whisper small.
+\item PhoWhisper small.
+\end{itemize}
+
+The evaluation is performed on the 15-utterance test split. All models use the same recorded audio and the same reference transcripts. The evaluation normalizes case, punctuation, and Vietnamese accents before computing WER. This makes the score focus more on lexical recognition than on orthographic accent differences. We force the Whisper language option to Vietnamese and use the default decoding configuration in the local OpenAI Whisper package. Experiments are run on Windows with Python 3.11.6 and PyTorch 2.7.0 CPU execution.
+
+In addition to raw ASR baselines, we include a post-hoc glossary-oriented error analysis. This step normalizes common ASR confusions for technical terms, such as mapping ``feature flux'' to ``feature flag'', ``dockerfine'' to ``dockerfile'', and ``graph ql resolver'' to ``graphql resolver''. Because these rules were written after inspecting test-set errors, this result is not a blind benchmark result. It should be interpreted as a diagnostic upper bound that motivates future dev-set-based glossary correction.
+
+\section{Results}
+Table~\ref{tab:overall} presents the blind raw-ASR benchmark results. Whisper base substantially outperforms Whisper tiny, reducing WER from 108.33\% to 68.75\%. Whisper small further reduces WER to 32.64\%, but its term recall remains low at 32.14\%. PhoWhisper small, despite being adapted for Vietnamese ASR, obtains 66.67\% WER and 10.71\% term recall on this code-switching test set. This suggests that Vietnamese specialization alone is not sufficient when the utterances contain dense English software engineering terms.
+
+Term precision is 100\% for all systems under this exact-match lexicon metric. This does not mean that the transcripts contain no wrong technical-sounding words. Rather, the systems rarely insert a term that exactly matches an entry in the fixed lexicon when that term is absent from the reference. The dominant failure mode is low recall: models miss or distort reference technical terms into non-lexicon strings.
+
+\begin{table}[htbp]
+\caption{Blind Raw-ASR Benchmark Results on Test Set}
+\begin{center}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lrrrr}
+\toprule
+\textbf{Model} & \textbf{WER} & \textbf{P} & \textbf{R} & \textbf{F1} \\
+\midrule
+Whisper tiny & 108.33\% & 100.00\% & 3.57\% & 6.90\% \\
+Whisper base & 68.75\% & 100.00\% & 17.86\% & 30.30\% \\
+Whisper small & 32.64\% & 100.00\% & 32.14\% & 48.65\% \\
+PhoWhisper small & 66.67\% & 100.00\% & 10.71\% & 19.35\% \\
+\bottomrule
+\end{tabular}
+}
+\label{tab:overall}
+\end{center}
+\end{table}
+
+Because the test set contains only 15 utterances, Table~\ref{tab:ci} reports bootstrap 95\% confidence intervals for WER using utterance-level resampling with 10,000 samples. The intervals are wide, confirming that these results should be interpreted as pilot-study evidence rather than statistically stable benchmark numbers.
+
+\begin{table}[htbp]
+\caption{Bootstrap 95\% Confidence Intervals for WER}
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+\textbf{Model} & \textbf{WER} & \textbf{95\% CI} \\
+\midrule
+Whisper tiny & 108.33\% & [81.69, 146.15]\% \\
+Whisper base & 68.75\% & [53.95, 83.67]\% \\
+Whisper small & 32.64\% & [25.35, 39.22]\% \\
+PhoWhisper small & 66.67\% & [47.65, 86.01]\% \\
+\bottomrule
+\end{tabular}
+\label{tab:ci}
+\end{center}
+\end{table}
+
+Table~\ref{tab:posthoc} reports the post-hoc glossary correction result. It reduces WER from 32.64\% to 9.72\% and increases term F1 from 48.65\% to 100.00\%. This large gain indicates that many errors are near-miss technical term errors. However, because the correction rules were derived after observing test errors, this should be treated as error analysis rather than a final system comparison.
+
+\begin{table}[htbp]
+\caption{Post-Hoc Glossary Correction Analysis}
+\begin{center}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lrrrr}
+\toprule
+\textbf{System} & \textbf{WER} & \textbf{P} & \textbf{R} & \textbf{F1} \\
+\midrule
+Whisper small & 32.64\% & 100.00\% & 32.14\% & 48.65\% \\
+Whisper small + post-hoc glossary & 9.72\% & 100.00\% & 100.00\% & 100.00\% \\
+\bottomrule
+\end{tabular}
+}
+\label{tab:posthoc}
+\end{center}
+\end{table}
+
+Table~\ref{tab:domain} reports domain-level WER for Whisper small because it is the best blind raw-ASR model in Table~\ref{tab:overall}. We intentionally do not use the post-hoc glossary-corrected system for this domain table to avoid presenting test-set-tuned corrections as a blind benchmark. Frontend has the lowest WER in this small split, while backend and database remain more difficult.
+
+\begin{table}[htbp]
+\caption{Whisper Small WER by Domain}
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+\textbf{Domain} & \textbf{WER} \\
+\midrule
+Backend & 41.38\% \\
+Database & 38.71\% \\
+DevOps & 37.93\% \\
+Frontend & 17.86\% \\
+Testing & 25.93\% \\
+\bottomrule
+\end{tabular}
+\label{tab:domain}
+\end{center}
+\end{table}
+
+\section{Discussion}
+The results show that model size matters, but model size alone is not sufficient. Whisper small is much better than Whisper tiny and Whisper base, but it still misses many software engineering terms. PhoWhisper small performs worse than Whisper small in this pilot, which may be because the model is optimized for Vietnamese speech and tends to convert English technical terms into Vietnamese-sounding phrases. These errors are especially problematic because technical terms often carry the main semantic content of an engineering utterance. For example, recognizing ``callback'' or ``resolver'' incorrectly may make a meeting transcript much less useful for developers.
+
+The post-hoc glossary correction result shows that a lightweight domain adaptation layer may be effective, but the current corrected score should not be interpreted as a valid blind test score. It is more useful as evidence that many ASR errors are recoverable technical term confusions. This also shows why ordinary WER is not enough. A model may recognize Vietnamese filler words but fail on the engineering vocabulary. Therefore, a benchmark for this task should always include term-aware metrics.
+
+Table~\ref{tab:qualitative} gives representative errors made by Whisper small. Many errors are phonetically plausible but semantically wrong in the software engineering domain.
+
+\begin{table}[htbp]
+\caption{Representative Whisper Small Errors}
+\begin{center}
+\begin{tabular}{p{0.28\linewidth}p{0.28\linewidth}p{0.28\linewidth}}
+\toprule
+\textbf{Reference Term} & \textbf{ASR Output} & \textbf{Possible Correction} \\
+\midrule
+feature flag & feature flux & feature flag \\
+playwright trace & play drive chess & playwright trace \\
+dockerfile & dockerfine & dockerfile \\
+graphql resolver & crap pl resolver & graphql resolver \\
+multi stage build & mantis txtview & multi stage build \\
+\bottomrule
+\end{tabular}
+\label{tab:qualitative}
+\end{center}
+\end{table}
+
+PhoWhisper small exhibits a different but related error pattern. It often maps English technical terms to Vietnamese-like phonetic approximations, for example ``feature flag'' to ``phi tro flash'', ``OAuth callback'' to ``oscow bach'', and ``artifact build'' to a Vietnamese-sounding phrase. This supports the need for a code-switching benchmark rather than evaluating only on monolingual Vietnamese ASR.
+
+There are several possible improvements. First, more speakers and more natural conversations should be collected. Second, a larger lexicon can be used for contextual biasing. Third, glossary correction should be designed only on a development set and evaluated once on a held-out test set. Fourth, more Vietnamese-specific baselines and larger PhoWhisper checkpoints should be evaluated. Finally, fine-tuning multilingual ASR models on in-domain speech may improve technical term recognition.
+
+\section{Limitations}
+ViSE-CS Mini is intentionally small. It contains 100 scripted utterances and about 10.30 minutes of audio. The test set has only 15 utterances, so the reported WER values can have high variance and should not be treated as statistically stable. The data are also recorded at utterance level, not extracted from real meetings. Real meetings would include overlapping speech, pauses, repairs, background noise, and more diverse speaker behavior.
+
+Another limitation is speaker diversity. The current prototype was recorded in a controlled setting and does not yet represent multiple regions, genders, microphones, or speaking styles. A stronger benchmark should report the number of speakers and use speaker-disjoint train/dev/test splits.
+
+The current transcripts are ASCII-only to avoid terminal encoding problems during recording. This makes the benchmark easier than full Vietnamese ASR, where diacritics are part of the output quality. Future versions should include both Vietnamese diacritic transcripts and normalized ASCII transcripts, and should report WER under both settings.
+
+The current term metrics are also limited. Although we report exact-match term precision, recall, and F1, the matching is based on a fixed lexicon with only 28 reference term occurrences in the test split. It may miss paraphrases, partial matches, spelling variants, or inserted technical terms that are outside the lexicon. Future work should use richer term alignment and manual validation.
+
+Finally, the glossary correction experiment is post-hoc. The rules were written after inspecting test-set errors, so the corrected score may overestimate generalization. In a rigorous evaluation, correction rules must be designed only using the development set, and the test set should be used only once for final evaluation.
+
+\section{Conclusion}
+This paper presented ViSE-CS Mini, a small Vietnamese software engineering code-switching speech dataset and benchmark. The dataset includes 100 utterances, metadata, token-level tags, a technical lexicon, recording tools, and benchmark scripts. Experiments with Whisper tiny, base, small, and PhoWhisper small show that software engineering code-switching speech remains difficult for off-the-shelf ASR systems. Whisper small obtains the best blind raw-ASR result with 32.64\% WER and 32.14\% term recall, while PhoWhisper small performs worse on dense English technical terms. A post-hoc glossary correction analysis further suggests that many errors are recoverable technical term confusions, but this result must be validated with dev-set-designed rules in future work. These findings support the need for larger domain-specific datasets, stronger code-switching baselines, term-aware metrics, and ASR adaptation for Vietnamese software engineering communication.
+
+\section*{Acknowledgment}
+The dataset and scripts were developed as a small research prototype for studying Vietnamese-English code-switching speech in software engineering contexts.
+
+\begin{thebibliography}{00}
+\bibitem{b1} A. Baevski, Y. Zhou, A. Mohamed, and M. Auli, ``wav2vec 2.0: A framework for self-supervised learning of speech representations,'' in \textit{Proc. NeurIPS}, 2020.
+\bibitem{b2} A. Gulati, J. Qin, C.-C. Chiu, N. Parmar, Y. Zhang, J. Yu, W. Han, S. Wang, Z. Zhang, Y. Wu, and R. Pang, ``Conformer: Convolution-augmented Transformer for speech recognition,'' in \textit{Proc. Interspeech}, 2020.
+\bibitem{b3} A. Radford, J. W. Kim, T. Xu, G. Brockman, C. McLeavey, and I. Sutskever, ``Robust speech recognition via large-scale weak supervision,'' in \textit{Proc. ICML}, 2023.
+\bibitem{b4} T.-T. Le, L. T. Nguyen, and D. Q. Nguyen, ``PhoWhisper: Automatic speech recognition for Vietnamese,'' in \textit{Proc. ICLR Tiny Papers}, 2024.
+\bibitem{b5} D. Jurafsky and J. H. Martin, \textit{Speech and Language Processing}, 3rd ed. draft, 2024.
+\bibitem{b6} K. C. Sim, F. Beaufays, A. Benard, D. Guliani, A. Kabel, N. Khare, T. Lucassen, P. Zadrazil, H. Zhang, L. Johnson, G. Motta, and L. Zhou, ``Personalization of end-to-end speech recognition on mobile devices for named entities,'' in \textit{Proc. ASRU}, 2019.
+\end{thebibliography}
+
+\end{document}

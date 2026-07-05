@@ -1,0 +1,6 @@
+model,test_utterances,wer,wer_percent,term_precision,term_precision_percent,term_recall,term_recall_percent,term_f1,term_f1_percent,term_miss_rate,term_miss_rate_percent
+Whisper tiny,15,1.0833,108.33,1.0000,100.00,0.0357,3.57,0.0690,6.90,0.9643,96.43
+Whisper base,15,0.6875,68.75,1.0000,100.00,0.1786,17.86,0.3030,30.30,0.8214,82.14
+Whisper small,15,0.3264,32.64,1.0000,100.00,0.3214,32.14,0.4865,48.65,0.6786,67.86
+PhoWhisper small,15,0.6667,66.67,1.0000,100.00,0.1071,10.71,0.1935,19.35,0.8929,89.29
+Whisper small + post-hoc glossary,15,0.0972,9.72,1.0000,100.00,1.0000,100.00,1.0000,100.00,0.0000,0.00

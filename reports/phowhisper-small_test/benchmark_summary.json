@@ -1,0 +1,53 @@
+{
+  "utterances": 100,
+  "scored": 15,
+  "missing_predictions": 0,
+  "wer": 0.6666666666666666,
+  "term_precision": 1.0,
+  "term_recall": 0.10714285714285714,
+  "term_f1": 0.19354838709677416,
+  "term_miss_rate": 0.8928571428571429,
+  "term_error_rate": 0.8928571428571429,
+  "matched_terms": 3,
+  "reference_terms": 28,
+  "hypothesis_terms": 3,
+  "groups": {
+    "domain:backend": {
+      "wer": 0.9655172413793104,
+      "utterances": 3,
+      "errors": 28,
+      "words": 29
+    },
+    "domain:database": {
+      "wer": 0.3870967741935484,
+      "utterances": 3,
+      "errors": 12,
+      "words": 31
+    },
+    "domain:devops": {
+      "wer": 0.7241379310344828,
+      "utterances": 3,
+      "errors": 21,
+      "words": 29
+    },
+    "domain:frontend": {
+      "wer": 0.7857142857142857,
+      "utterances": 3,
+      "errors": 22,
+      "words": 28
+    },
+    "domain:testing": {
+      "wer": 0.48148148148148145,
+      "utterances": 3,
+      "errors": 13,
+      "words": 27
+    },
+    "split:test": {
+      "wer": 0.6666666666666666,
+      "utterances": 15,
+      "errors": 96,
+      "words": 144
+    }
+  },
+  "missing_utt_id": []
+}

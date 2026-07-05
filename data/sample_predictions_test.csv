@@ -1,0 +1,16 @@
+utt_id,prediction
+vise_0086,image lazy loading khi?n layout shift tr?n trang product
+vise_0087,feature flag cho ph?p b?t d?n ch?c n?ng recommendation
+vise_0088,enum status n?n c? migration cho gi? tr? cancelled
+vise_0089,playwright trace gi?p xem l?i b??c click b? fail
+vise_0090,artifact build c?n g?n version tag theo git commit
+vise_0091,accessibility audit s? ki?m tra contrast v? keyboard navigation
+vise_0092,oauth callback redirect sai domain tr?n m?i tr??ng staging
+vise_0093,sharding theo tenant id c? th? gi?m t?i database ch?nh
+vise_0094,snapshot n?n update sau khi designer ??i copy
+vise_0095,message broker b? ngh?n v? consumer x? l? qu? ch?m
+vise_0096,service worker cache l?m ng??i d?ng th?y phi?n b?n c?
+vise_0097,graph ql resolver c?n batch request ?? tr?nh n plus one query
+vise_0098,unique index kh?ng ho?t ??ng v? d? li?u null ???c ph?p l?p
+vise_0099,regression test s? cover c?c bug ?? t?ng x?y ra
+vise_0100,docker file n?n d?ng multi stage build ?? gi?m image size

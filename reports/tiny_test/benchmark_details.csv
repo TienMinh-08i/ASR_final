@@ -1,0 +1,16 @@
+utt_id,split,domain,wer,errors,words,ref_term_count,hyp_term_count,matched_term_count,missed_term_count,inserted_term_count,missed_terms,inserted_terms,reference,prediction
+vise_0086,test,frontend,1.4444,13,9,3,0,0,3,0,layout shift; layout; loading,,image lazy loading khien layout shift tren trang product,"ím mi te experiencing conversations, dengan 14 triền orangm tôi hạt hiện atkm"
+vise_0087,test,backend,0.4444,4,9,1,0,0,1,0,feature flag,,feature flag cho phep bat dan chuc nang recommendation,"Vì chờ phạch, chó phép, bật, dẫn trực nâng, recommendation."
+vise_0088,test,database,0.8889,8,9,2,0,0,2,0,enum status; migration,,enum status nen co migration cho gia tri cancelled,UNUMES STATOS niên có Pick
+vise_0089,test,testing,1.0000,9,9,1,0,0,1,0,playwright trace,,playwright trace giup xem lai buoc click bi fail,lineplicmake slide Bọn Người đâyckchchchchch
+vise_0090,test,devops,1.0000,9,9,3,0,0,3,0,artifact build; git commit; version tag,,artifact build can gan version tag theo git commit,cumulativey head Video cộng tắc theo cái con biết
+vise_0091,test,frontend,1.0000,9,9,2,0,0,2,0,accessibility audit; keyboard navigation,,accessibility audit se kiem tra contrast va keyboard navigation,"×c扮 s contradictory, Savague gần chák quân s primera,"
+vise_0092,test,backend,0.8889,8,9,2,0,0,2,0,oauth callback; staging,,oauth callback redirect sai domain tren moi truong staging,Có cầu bắt t réK side 2ond trên mỗi trường
+vise_0093,test,database,1.0000,10,10,2,0,0,2,0,tenant id; sharding,,sharding theo tenant id co the giam tai database chinh,
+vise_0094,test,testing,0.3750,3,8,0,0,0,0,0,,,snapshot nen update sau khi designer doi copy,Snapshot nên app列 sau khi designers Then copy
+vise_0095,test,devops,1.0000,10,10,2,0,0,2,0,message broker; consumer,,message broker bi nghen vi consumer xu ly qua cham,Mài 실제로 còn đ seek nó 분들 identity khóm T촌
+vise_0096,test,frontend,0.7000,7,10,2,0,0,2,0,service worker; cache,,service worker cache lam nguoi dung thay phien ban cu,Service Walk Custom làm người không Ta y viên bảngu
+vise_0097,test,backend,3.0909,34,11,2,0,0,2,0,n plus one query; graphql resolver,,graphql resolver can batch request de tranh n plus one query,"Crahp Next Script P gàTime Con Thus,ặng 3кой đ� Ch Gogh 1c uwé Mày 것은 Aoer Vào viết Tài phòng M academic Mày mira Ch kızım Nghe Chbeing Éng B closed Vào viết"
+vise_0098,test,database,0.8333,10,12,2,1,1,1,0,unique index,,unique index khong hoat dong vi du lieu null duoc phep lap,"Nh tick, index, không hạt được virus靈論, được phApp large."
+vise_0099,test,testing,1.0000,10,10,1,0,0,1,0,regression test,,regression test se cover cac bug da tung xay ra,Рatories monument shoulderongb riff
+vise_0100,test,devops,1.2000,12,10,3,0,0,3,0,multi stage build; image size; dockerfile,,dockerfile nen dung multi stage build de giam image size,Đật k Huaền人 dùngragt tinh題 preserve điyorum nhìn và điểm js Library

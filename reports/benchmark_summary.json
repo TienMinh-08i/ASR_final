@@ -1,0 +1,46 @@
+{
+  "utterances": 100,
+  "scored": 15,
+  "missing_predictions": 0,
+  "wer": 0.7222222222222222,
+  "term_error_rate": 0.8214285714285714,
+  "groups": {
+    "domain:backend": {
+      "wer": 0.896551724137931,
+      "utterances": 3,
+      "errors": 26,
+      "words": 29
+    },
+    "domain:database": {
+      "wer": 0.6774193548387096,
+      "utterances": 3,
+      "errors": 21,
+      "words": 31
+    },
+    "domain:devops": {
+      "wer": 0.7241379310344828,
+      "utterances": 3,
+      "errors": 21,
+      "words": 29
+    },
+    "domain:frontend": {
+      "wer": 0.8571428571428571,
+      "utterances": 3,
+      "errors": 24,
+      "words": 28
+    },
+    "domain:testing": {
+      "wer": 0.4444444444444444,
+      "utterances": 3,
+      "errors": 12,
+      "words": 27
+    },
+    "split:test": {
+      "wer": 0.7222222222222222,
+      "utterances": 15,
+      "errors": 104,
+      "words": 144
+    }
+  },
+  "missing_utt_id": []
+}

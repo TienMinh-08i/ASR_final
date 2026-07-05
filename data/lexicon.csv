@@ -1,0 +1,155 @@
+term,category,canonical_form,vietnamese_hint
+push,git,push,đẩy code lên remote
+branch,git,branch,nhánh mã nguồn
+develop,git,develop,nhánh phát triển
+pull request,git,pull request,yêu cầu gộp code
+re-render,frontend,re-render,render lại giao diện
+state,frontend,state,trạng thái component
+api,backend,API,giao diện lập trình ứng dụng
+status code,backend,status code,mã trạng thái HTTP
+index,database,index,chỉ mục
+production,devops,production,môi trường thật
+unit test,testing,unit test,kiểm thử đơn vị
+pipeline,devops,pipeline,luồng CI/CD
+docker image,devops,Docker image,ảnh Docker
+submit,frontend,submit,gửi form
+loading,frontend,loading,đang tải
+middleware,backend,middleware,lớp trung gian xử lý request
+authentication,backend,authentication,xác thực
+module,backend,module,khối mã tách biệt
+unique constraint,database,unique constraint,ràng buộc duy nhất
+flaky,testing,flaky,test lúc pass lúc fail
+server,devops,server,máy chủ
+staging,devops,staging,môi trường thử nghiệm
+react query,frontend,React Query,thư viện fetch/cache dữ liệu
+token,backend,token,mã xác thực
+refresh token,backend,refresh token,token làm mới
+migration,database,migration,tập lệnh thay đổi schema
+rollback,database,rollback,quay lui thay đổi
+mock service,testing,mock service,dịch vụ giả lập
+timeout,testing,timeout,hết thời gian chờ
+kubernetes,devops,Kubernetes,nền tảng orchestration container
+environment variable,devops,environment variable,biến môi trường
+css,frontend,CSS,ngôn ngữ định kiểu
+mobile,frontend,mobile,thiết bị di động
+layout,frontend,layout,bố cục
+endpoint,backend,endpoint,đường dẫn API
+cache,backend,cache,bộ nhớ đệm
+transaction,database,transaction,giao dịch cơ sở dữ liệu
+deadlock,database,deadlock,khóa chéo
+integration test,testing,integration test,kiểm thử tích hợp
+ci,devops,CI,tích hợp liên tục
+hook,frontend,hook,hàm hook trong React
+use effect,frontend,useEffect,hook xử lý side effect
+dependency array,frontend,dependency array,mảng phụ thuộc của hook
+payment,backend,payment,thanh toán
+null response,backend,null response,phản hồi rỗng
+schema,database,schema,lược đồ dữ liệu
+soft delete,database,soft delete,xóa mềm
+coverage,testing,coverage,độ phủ kiểm thử
+assertion,testing,assertion,khẳng định trong test
+memory leak,devops,memory leak,rò rỉ bộ nhớ
+message queue,backend,message queue,hàng đợi thông điệp
+foreign key,database,foreign key,khóa ngoại
+seed,database,seed,dữ liệu khởi tạo
+e two e test,testing,E2E test,kiểm thử đầu cuối
+health check,devops,health check,kiểm tra tình trạng dịch vụ
+modal,frontend,modal,hộp thoại nổi
+business logic,backend,business logic,logic nghiệp vụ
+composite index,database,composite index,chỉ mục nhiều cột
+tenant id,database,tenant_id,mã tenant
+created at,database,created_at,thời điểm tạo
+snapshot test,testing,snapshot test,kiểm thử snapshot
+crash loop back off,devops,CrashLoopBackOff,lỗi pod khởi động lặp
+secret,devops,secret,bí mật cấu hình
+lazy load,frontend,lazy load,tải trì hoãn
+rate limiter,backend,rate limiter,bộ giới hạn tốc độ
+internal service,backend,internal service,dịch vụ nội bộ
+replica lag,database,replica lag,độ trễ bản sao
+docker compose,devops,Docker Compose,công cụ chạy nhiều container
+redis,database,Redis,kho key-value
+postgres,database,Postgres,cơ sở dữ liệu PostgreSQL
+api gateway,backend,API gateway,c?ng API
+inventory,backend,inventory,d?ch v? kho
+slow query log,database,slow query log,log truy v?n ch?m
+load test,testing,load test,ki?m th? t?i
+concurrent users,testing,concurrent users,ng??i d?ng ??ng th?i
+cpu usage,devops,CPU usage,m?c s? d?ng CPU
+autoscaling,devops,autoscaling,t? ??ng m? r?ng
+bundle size,frontend,bundle size,k?ch th??c bundle
+lodash,frontend,Lodash,th? vi?n JavaScript
+webhook,backend,webhook,callback s? ki?n
+duplicate event,backend,duplicate event,s? ki?n tr?ng
+citext,database,citext,ki?u text kh?ng ph?n bi?t hoa th??ng
+fixture,testing,fixture,d? li?u d?ng s?n cho test
+github actions,devops,GitHub Actions,n?n t?ng CI/CD
+dependency,devops,dependency,ph? thu?c ph?n m?m
+debounce,frontend,debounce,gi?m t?n su?t x? l?
+grpc client,backend,gRPC client,client gRPC
+deadline exceeded,backend,deadline exceeded,qu? h?n th?i gian
+partition table,database,partition table,b?ng ph?n v?ng
+bad gateway,devops,bad gateway,l?i 502
+upstream service,devops,upstream service,d?ch v? ph?a sau proxy
+custom hook,frontend,custom hook,hook t? ??nh ngh?a
+event handler,backend,event handler,b? x? l? s? ki?n
+idempotent,backend,idempotent,ch?y l?p v?n c?ng k?t qu?
+connection pool,database,connection pool,nh?m k?t n?i
+batch job,backend,batch job,t?c v? h?ng lo?t
+contract test,testing,contract test,ki?m th? h?p ??ng API
+terraform plan,devops,Terraform plan,k? ho?ch h? t?ng
+security group,devops,security group,nh?m b?o m?t
+toast notification,frontend,toast notification,th?ng b?o n?i
+sticky header,frontend,sticky header,header c? ??nh
+dto,backend,DTO,??i t??ng truy?n d? li?u
+repository,backend,repository,l?p truy c?p d? li?u
+read replica,database,read replica,b?n sao ch? ??c
+mock clock,testing,mock clock,??ng h? gi? l?p
+health probe,devops,health probe,??u d? s?c kh?e
+form wizard,frontend,form wizard,form nhi?u b??c
+local storage,frontend,localStorage,l?u tr? tr?nh duy?t
+serializer,backend,serializer,b? tu?n t? h?a
+smoke test,testing,smoke test,ki?m th? kh?i
+blue green deployment,devops,blue-green deployment,tri?n khai xanh l?c
+downtime,devops,downtime,th?i gian gi?n ?o?n
+hydration error,frontend,hydration error,l?i hydration
+server render,frontend,server render,render ph?a server
+job scheduler,backend,job scheduler,b? l?p l?ch
+backup restore,database,backup restore,kh?i ph?c b?n sao l?u
+test data builder,testing,test data builder,b? d?ng d? li?u test
+alert manager,devops,alert manager,qu?n l? c?nh b?o
+memoization,frontend,memoization,ghi nh? k?t qu?
+circuit breaker,backend,circuit breaker,m?u ng?t m?ch
+downstream service,backend,downstream service,d?ch v? ph? thu?c
+materialized view,database,materialized view,view v?t h?a
+parallel test,testing,parallel test,test ch?y song song
+temp folder,testing,temp folder,th? m?c t?m
+helm chart,devops,Helm chart,g?i tri?n khai Kubernetes
+resource limit,devops,resource limit,gi?i h?n t?i nguy?n
+dark mode,frontend,dark mode,ch? ?? t?i
+app state,frontend,app state,tr?ng th?i ?ng d?ng
+express request,backend,Express request,request Express
+vacuum,database,VACUUM,d?n b?ng Postgres
+table bloat,database,table bloat,ph?nh b?ng
+mutation test,testing,mutation test,ki?m th? ??t bi?n
+ssl certificate,devops,SSL certificate,ch?ng ch? SSL
+layout shift,frontend,layout shift,d?ch chuy?n b? c?c
+feature flag,backend,feature flag,c? t?nh n?ng
+enum status,database,enum status,tr?ng th?i enum
+playwright trace,testing,Playwright trace,v?t ch?y Playwright
+artifact build,devops,artifact build,s?n ph?m build
+version tag,devops,version tag,nh?n phi?n b?n
+git commit,git,git commit,commit git
+accessibility audit,frontend,accessibility audit,ki?m tra kh? n?ng truy c?p
+keyboard navigation,frontend,keyboard navigation,?i?u h??ng b?n ph?m
+oauth callback,backend,OAuth callback,callback OAuth
+sharding,database,sharding,chia m?nh d? li?u
+message broker,devops,message broker,h?ng ??i th?ng ?i?p
+consumer,devops,consumer,b? ti?u th? message
+service worker,frontend,service worker,worker tr?nh duy?t
+graphql resolver,backend,GraphQL resolver,resolver GraphQL
+n plus one query,database,N+1 query,l?i truy v?n N+1
+unique index,database,unique index,ch? m?c duy nh?t
+regression test,testing,regression test,ki?m th? h?i quy
+dockerfile,devops,Dockerfile,file build Docker
+multi stage build,devops,multi-stage build,build nhi?u giai ?o?n
+image size,devops,image size,k?ch th??c image

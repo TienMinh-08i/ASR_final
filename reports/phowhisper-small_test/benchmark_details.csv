@@ -1,0 +1,16 @@
+utt_id,split,domain,wer,errors,words,ref_term_count,hyp_term_count,matched_term_count,missed_term_count,inserted_term_count,missed_terms,inserted_terms,reference,prediction
+vise_0086,test,frontend,1.1111,10,9,3,0,0,3,0,layout shift; layout; loading,,image lazy loading khien layout shift tren trang product,imít lady lốt đinh khiến lay áo sếp trên trang pờ rô đắc.
+vise_0087,test,backend,0.7778,7,9,1,0,0,1,0,feature flag,,feature flag cho phep bat dan chuc nang recommendation,phi trợ flash cho phép bật dần chức năng the comment dây sừn.
+vise_0088,test,database,0.3333,3,9,2,0,0,2,0,enum status; migration,,enum status nen co migration cho gia tri cancelled,inung status nên có microsoft cho giá trị cancel.
+vise_0089,test,testing,0.4444,4,9,1,0,0,1,0,playwright trace,,playwright trace giup xem lai buoc click bi fail,lay lại chết giúp xem lại bước click bị phêu.
+vise_0090,test,devops,1.2222,11,9,3,0,0,3,0,artifact build; git commit; version tag,,artifact build can gan version tag theo git commit,ặc thị phách bill clinton cần gắn vơ rừng tác theo giggs cong mít.
+vise_0091,test,frontend,0.8889,8,9,2,0,0,2,0,accessibility audit; keyboard navigation,,accessibility audit se kiem tra contrast va keyboard navigation,accep vi ty audio sẽ kiểm tra con trăn và ki bót navigation.
+vise_0092,test,backend,0.7778,7,9,2,0,0,2,0,oauth callback; staging,,oauth callback redirect sai domain tren moi truong staging,oscow bách derby sai đô men trên môi trường chết dinh.
+vise_0093,test,database,0.8000,8,10,2,0,0,2,0,tenant id; sharding,,sharding theo tenant id co the giam tai database chinh,xác định theo tin ươi ai đi có thể giảm tải delta bay chính.
+vise_0094,test,testing,0.7500,6,8,0,0,0,0,0,,,snapshot nen update sau khi designer doi copy,snap sót nên ấp đết sau khi reed ở đợi copy.
+vise_0095,test,devops,0.2000,2,10,2,1,1,1,0,message broker,,message broker bi nghen vi consumer xu ly qua cham,messi rocker bị nghẽn vì consumer xử lý quá chậm.
+vise_0096,test,frontend,0.4000,4,10,2,0,0,2,0,service worker; cache,,service worker cache lam nguoi dung thay phien ban cu,sơ vết walker khác làm người dùng thay phiên bản cũ.
+vise_0097,test,backend,1.2727,14,11,2,0,0,2,0,n plus one query; graphql resolver,,graphql resolver can batch request de tranh n plus one query,crab pheo roi sô vờ cần bắt trí quét để tránh en phờ lớt oăn chu ri.
+vise_0098,test,database,0.0833,1,12,2,2,2,0,0,,,unique index khong hoat dong vi du lieu null duoc phep lap,unique index không hoạt động vì dữ liệu nôn được phép lập.
+vise_0099,test,testing,0.3000,3,10,1,0,0,1,0,regression test,,regression test se cover cac bug da tung xay ra,requét sừn test sẽ cover các bấc đã từng xảy ra.
+vise_0100,test,devops,0.8000,8,10,3,0,0,3,0,multi stage build; image size; dockerfile,,dockerfile nen dung multi stage build de giam image size,đốc cơ file nên dùng mân thi status để giảm imít sai.

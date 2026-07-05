@@ -1,0 +1,6 @@
+transformers
+accelerate
+torch
+soundfile
+librosa
+imageio-ffmpeg

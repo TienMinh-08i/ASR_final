@@ -1,0 +1,11 @@
+utt_id,prediction
+vise_0001,em v?a push code l?n branch develop r?i t?o pull request
+vise_0002,component n?y b? re render nhi?u l?n khi state thay ??i
+vise_0003,api login ?ang tr? v? status code n?m tr?m
+vise_0004,query n?y thi?u index n?n ch?y r?t ch?m tr?n production
+vise_0005,m?nh c?n vi?t th?m unit test cho h?m validate email
+vise_0006,pipeline b? fail ? b??c build docker image
+vise_0007,n?t submit kh?ng disable khi form ?ang loading
+vise_0008,middleware authentication n?n t?ch ra th?nh m?t module ri?ng
+vise_0009,b?ng users c?n th?m unique constraint cho tr??ng phone
+vise_0010,test case n?y flaky v? ph? thu?c v?o th?i gian hi?n t?i
